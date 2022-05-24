@@ -1,0 +1,184 @@
+header{
+    display: flex;
+    justify-content: center;
+    background-color: #4092db;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+nav{
+    flex-basis: 95%;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.parent-ul{
+    display: flex;
+    align-items: center;
+}
+ul > li{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+ul > li.login{
+    flex-grow: 3;
+    text-align: right;
+    height: 100%;
+}
+ul > li.login > a{
+    display: inline-block;
+}
+
+ul > li > a{
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    margin: 0;
+    font-size: 19px;
+}
+ul > li > ul{
+    display: none;
+    position: absolute;
+    background-color: #1e517e;
+    width: 200px;
+}
+ul > li > ul > li > a{
+    display: block;
+}
+ul.parent-ul > li:hover{
+    background-color: #1e517e;
+    color: white;
+}
+ul.parent-ul > li:hover > a{
+    color: white;
+}
+ul.parent-ul > li:hover ul{
+    display: block;
+}
+
+ul.parent-ul > li.login:hover{
+    background-color: transparent;
+}
+ul > li > ul > li:hover{
+    background-color: #2e6fa5;
+}
+ul > li > ul > li:hover > a{
+    color: white;
+}
+
+p.title{
+    display: none;
+}
+
+p.title:hover{
+    background-color:  #4092db;
+}
+div.main{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+}
+
+/* ----------------------------- */
+@media screen and (max-width: 1000px){
+    body{
+        background-color: transparent;
+    }
+    header{
+        display: block;
+        background-color: white;
+    }
+    ul.parent-ul{
+        flex-direction: column;
+        border: 1px solid rgb(100, 100, 100);
+        background-color: white;
+        position: fixed;
+        transition: 1s left;
+        width: 80%;
+        overflow: hidden;
+        height: 100%;
+        left: -80%;
+        top: 64px;
+    }
+    ul.parent-ul > li{
+        width: 100%;
+    }
+    ul.parent-ul > li > a{
+        color: black;
+        padding-left: 50px;
+        display: block;
+    }
+    ul.parent-ul > li > ul{
+        display: block;
+        width: 100%;
+        position: static;
+        max-height: 0;
+        transition: 1s max-height;
+        overflow: hidden;
+    }
+    ul.parent-ul > li > ul > li > a{
+        padding-left: 80px;
+    }
+    ul.parent-ul > li:hover{
+        background-color: transparent;  
+    }
+    ul.parent-ul > li:hover > a{
+        color: black;
+    }
+    ul.parent-ul > li:hover ul{
+        max-height: 300px;
+    }
+    ul > li.login > a{
+        display: block;
+        text-align: left;
+        padding-left: 50px;
+        color: black;
+    }    
+    ul > li.login:hover > a{
+        color: black;
+    }
+    p.title{
+        position: absolute;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 30px;
+        background-color: #4092db;
+        color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        /* z-index: 1; */
+    }
+    p.title > button{
+        border: none;
+        background-color: transparent;
+        width: 50px;
+        position: absolute;
+        left: 10px;
+        top: 20px;
+    }
+    p.title > button > div{
+        border: 1px solid white;
+        margin: 5px;
+    }
+    div.main{
+        width: 80%;
+        margin: auto;
+        padding-top: 100px;
+    }
+}
+
+/* @media screen and (max-width: 3000px){
+    body{
+        border: 5px solid red;
+    }
+} */
